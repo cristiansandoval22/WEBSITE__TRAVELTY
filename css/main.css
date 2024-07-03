@@ -736,7 +736,7 @@ html {
         grid-template-columns: repeat(4, 1fr);
     }
 }
-
+add_responsive
 /* scrool up */
 .scrollup{
     position: fixed;
