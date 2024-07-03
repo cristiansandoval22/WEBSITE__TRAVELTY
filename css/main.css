@@ -65,6 +65,7 @@ html {
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
+    z-index: 100;
 }
 
 .nav__logo {
@@ -303,62 +304,35 @@ html {
 /* // service section */
 
 /* testimonial section */
-.client__container {
-    display: grid;
-    gap: 2rem;
-    text-align: center;
-    margin-bottom: 16px;
-}
 
 .client__subtitle {
     font-size: 2.5rem;
     color: var(--text-dark);
     font-family: var(--header-font);
     line-height: 1;
+    text-align: center;
 }
 
 .client__title {
     color: var(--primary-color);
     font-family: var(--header-font);
     font-size: 1.3rem;
+    text-align: center;
 }
 
-.client__image img {
-    max-width: 400px;
-    margin-inline: auto;
-    border-radius: 5px;
-}
-
-.client__image img.show {
-    animation: show-image 0.3s forwards;
-}
-
-.client__image img.hide {
-    animation: hide-image 0.3s forwards;
-}
-
-@keyframes show-image {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes hide-image {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-.client__content {
+.client_img{
+    width: 90%;
+    max-width: 300px;
+    margin: auto;
     overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+.client_img img{
+    width: 100%;
+    object-fit: cover; 
+}
+.client__content {
+    overflow: hidden;  
 }
 
 .swiper {
@@ -407,8 +381,8 @@ html {
     gap: 5px;
 }
 
-.client-swiper-btns .swiper-prev,
-.client-swiper-btns .swiper-next {
+.swiper-prev,
+.swiper-next {
     padding: 5px 10px;
     font-display: 1.25rem;
     color: var(--white);
@@ -417,8 +391,8 @@ html {
     cursor: pointer;
 }
 
-.client-swiper-btns .swiper-prev:hover,
-.client-swiper-btns .swiper-next:hover {
+.swiper-prev:hover,
+.swiper-next:hover {
     background-color: var(--primary-color);
 }
 
@@ -725,6 +699,30 @@ html {
 
     .copy{
         font-size: 16px;
+    }
+
+    .swiper-wrapper {
+        padding-bottom: 2rem;
+    }
+    
+    .swiper-slide{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+    }
+    .client_img{
+        width: 50%;
+        margin: 0;
+    }
+    
+    .client__card{
+        width: 45%;
+        margin: 0;
+    }
+
+    .client-swiper-btns{
+        justify-content: center;
     }
 }
 
