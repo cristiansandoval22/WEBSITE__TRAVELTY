@@ -16,6 +16,7 @@
     width: 96%;
     max-width: 1200px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 body {
@@ -28,25 +29,18 @@ html {
 }
 
 .btn {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color-light);
     padding: 12px 24px;
     border-radius: 10px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn:hover {
     background-color: var(--primary-color);
 }
 
-.active-link {
-    color: var(--primary-color);
-}
-
-
-
 /* header and nav */
-
-
 .header {
     width: 100%;
     /* height: calc(100vh -3rem); */
@@ -61,7 +55,10 @@ html {
 }
 
 .nav {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 3rem;
     background-color: var(--primary-color);
     display: flex;
@@ -146,15 +143,20 @@ html {
 /* offer section */
 .offer__container,
 .service__container,
-.client__container,
-.contact__container {
+.client__container {
     padding: 5rem 0;
+}
+
+.offer__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
 }
 
 .offer__figure {
     max-width: 400px;
-    margin: auto;
-    margin-bottom: 2rem;
 }
 
 .offer__img {
@@ -209,8 +211,8 @@ html {
 
 .offer__price {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -242,12 +244,17 @@ html {
     margin-bottom: 16px;
 }
 
+.container__cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 30px;
+}
+
 .service__card {
-    max-width: 360px;
     border-radius: 10px;
     transition: all 0.3s ease;
-    margin: auto;
-    margin-bottom: 24px;
 }
 
 .service__card:hover {
@@ -486,33 +493,36 @@ html {
 /* //banner section */
 
 /* contact section */
-.contact__container{
-    padding: 12rem 0;
+.offer__container,
+.contact__container,
+.service__container,
+.section__container,
+.contact__container,
+.banner {
+    padding: 5rem 1rem;
 }
-.newsletter_container {
-    background-color: var(--primary-color);
-    border-radius: 10px;
-    max-width: 900px;
-    min-height: 300px;
-    margin: 0 auto;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 1rem;
+.contact__container {
+    padding: 10rem 1rem;
+}
+
+.newsletter_container {
+    max-width: 900px;
+    margin-inline: auto;
+    padding: 4rem 1rem;
+    text-align: center;
+    background-color: var(--primary-color);
+    border-radius: 5px;
 }
 
 .contact__title {
     font-family: var(--header-font);
     font-size: 2rem;
-    text-align: center;
     line-height: 1;
     margin-bottom: 1rem;
 }
 
 .contact__description {
-    text-align: center;
     line-height: 1.5;
     margin-bottom: 2rem;
 }
@@ -537,17 +547,67 @@ html {
     color: var(--text-dark);
 }
 
-input::placeholder {
-    padding-left: 10px;
-}
-
-/* .send{
-    
-} */
-
 /* //contact section */
 
+/* footer */
+.footer__grid {
+    display: grid;
+    gap: 4rem 1rem;
+}
+
+.footer__logo{
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.footer__description{
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+.footer__title{
+    font-size: 1.5rem;
+    font-family: var(--header-font);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+.footer__links{
+    display: grid;
+    gap: 1rem;
+    font-size: 16px;
+}
+.footer__link{
+    color: var(--text-light);
+}
+
+.footer__socials{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer__socials a{
+    font-size: 1.5rem;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.footer__socials a:hover{
+    color: var(--primary-color);
+}
+
+.copy{
+    color: var(--text-light);
+    text-align: center;
+    font-size: 12px;
+    padding: 1.5rem 0;
+}
+/* //footer */
 /* breakpoints */
+
+
 @media (min-width:768px) {
 
     /* big landscape tablets, laptops, and desktops */
@@ -555,7 +615,8 @@ input::placeholder {
 
 
     .nav {
-        background-color: transparent; 
+        position: inherit;
+        background-color: transparent;
         padding: 10px 5%;
         display: flex;
         align-items: center;
@@ -597,9 +658,11 @@ input::placeholder {
     }
 
     .offer__container {
-        display: flex;
-        gap: 2.5rem;
+        flex-direction: row;
+        align-items: center;
         justify-content: center;
+        margin: auto;
+
     }
 
     .offer__figure {
@@ -607,18 +670,26 @@ input::placeholder {
     }
 
     .offer__data {
-        padding: 5rem 0;
         width: 40%;
+        max-width: 400px;
     }
 
     .offer__subtitle,
     .offer__title,
     .offer__description,
     .offer__inf,
-    .offer__raiting,
-    .offer__price {
+    .offer__raiting {
         text-align: left;
     }
+
+    .offer__price {
+        justify-content: start;
+    }
+
+    .container__cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
 
     .service__title {
         font-size: 1.25rem;
@@ -629,10 +700,6 @@ input::placeholder {
         margin-bottom: 3rem;
     }
 
-    .container__cards {
-        display: flex;
-        justify-content: space-around;
-    }
 
     .client__container {
         grid-template-columns: repeat(2, 1fr);
@@ -652,8 +719,48 @@ input::placeholder {
         justify-content: flex-start;
     }
 
-    .contact__container{
-        padding:  0;
+    .footer__grid{
+        grid-template-columns: repeat(2, 1fr);
     }
 
+    .copy{
+        font-size: 16px;
+    }
 }
+
+@media (min-width:1024px){
+    .contact__description{
+        margin-inline: 12rem;
+    }
+    .footer__grid{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* scrool up */
+.scrollup{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    right: 1rem;
+    bottom: -50%;
+    background-color: var(--primary-color);
+    box-shadow: 0 12px 24px hsla(228, 48%, 4%, .5);
+    display: inline-flex;
+    padding: 6px;
+    border-radius: 50%;
+    font-size: 2rem;
+    z-index: 100;
+
+    align-items: center;
+    justify-content: center;
+    transition: bottom 0.4s ease-in-out, transform 0.4s ease-in-out;
+  }
+  
+  .scrollup:hover{
+    transform: translateY(-0.5rem);
+  }
+  /* Show Scroll Up */
+  .show-scroll{
+    bottom: 3rem;
+  }

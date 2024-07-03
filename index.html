@@ -18,7 +18,7 @@
 <body>
     <!-- header -->
     <header class="header" id="header">
-        <nav class="nav">
+        <nav class="nav" id="nav">
 
             <a href="#" class="nav__logo">
                 Travelty
@@ -117,9 +117,9 @@
         <section class="service__container container" id="service">
             <h2 class="service__title">OUR SERVICE</h2>
             <p class="service__subtitle">We provide world top <br> destination for you</p>
-            <div class="container__cards container">
+            <div class="container__cards">
 
-                <article class="service__card card">
+                <article class="service__card card card1">
                     <div class="cardimg__container">
                         <img src="./assets/service-1.jpg" alt="image" class="card__img">
                     </div>
@@ -142,7 +142,7 @@
                     </div>
                 </article>
 
-                <article class="service__card card">
+                <article class="service__card card card2">
                     <div class="cardimg__container">
                         <img src="./assets/service-2.jpg" alt="image" class="card__img">
                     </div>
@@ -164,7 +164,7 @@
                     </div>
                 </article>
 
-                <article class="service__card card">
+                <article class="service__card card card3">
                     <div class="cardimg__container">
                         <img src="./assets/service-3.jpg" alt="image" class="card__img">
                     </div>
@@ -264,6 +264,7 @@
         <!-- //client -->
         <!-- banner -->
         <section class="banner container">
+
             <div class="banner__wrapper">
                 <div class="banner__card">
                     <img src="assets/banner-1.jpg" alt="banner" />
@@ -370,9 +371,11 @@
                     </div>
                 </div>
             </div>
+            
         </section>
         <!-- //banner -->
         <section class="contact__container container" id="contact">
+
             <div class="newsletter_container">
                 <h3 class="contact__title">Sign Up to our Newsletter</h3>
 
@@ -383,15 +386,72 @@
                     <button type="button" class="send btn"> Send</button>
                 </form>
             </div>
+
         </section>
         <!-- Newsletter -->
          <!-- //Newsletter -->
     </main>
     <!-- // main -->
     <!-- footer -->
-    <footer class="footer"></footer>
-    <!-- // foter -->
+    <footer class="footer container" style="color: rebeccapurple;">
+        <div class="footer__grid">
 
+            <div class="footer__col">
+
+                <a href="#home" class="footer__logo">travelty</a>
+
+                <p class="footer__description">
+                    Discover a world of endless possibilities as we curate the best in travel, from hidden gems to iconic landmarks.
+                </p>
+
+                <div class="footer__socials">
+                    <a href=""><i class="ri-facebook-fill"></i></a>
+                    <a href=""><i class="ri-twitter-fill"></i></a>
+                    <a href=""><i class="ri-instagram-fill"></i></a>
+                    <a href=""><i class="ri-pinterest-fill"></i></a>
+                    <a href=""><i class="ri-linkedin-fill"></i></a>    
+                </div>
+            </div>
+
+            <div class="footer__col">
+                <h4 class="footer__title">Quick Links</h4>
+                <div class="footer__links">
+                    <a href="#" class="footer__link">Explore Destinations</a>
+                    <a href="#" class="footer__link">Exclusive Offers</a>
+                    <a href="#" class="footer__link">Travel Tips & Guides</a>
+                    <a href="#" class="footer__link">Book Your Adventure</a>
+                    <a href="#" class="footer__link">Join our Community</a>
+                </div>
+            </div>
+
+            <div class="footer__col">
+                <h4 class="footer__title">Company</h4>
+                <div class="footer__links">
+                    <a href="#" class="footer__link">About Us</a>
+                    <a href="#" class="footer__link">Our Team</a>
+                    <a href="#" class="footer__link">Terms & Conditions</a>
+                    <a href="#" class="footer__link">Privacy Policy</a>
+                </div>
+            </div>
+
+            <div class="footer__col">
+                <h4 class="footer__title">Contact Us</h4>
+                <div class="footer__links">
+                    <a href="#" class="footer__link">Customer Support</a>
+                    <a href="#" class="footer__link">Business Inquiries</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="copy">
+            <p>Copyright © 2024 Web Design Cristian Sandoval.</p>
+        </div>
+    </footer>
+    <!-- // foter -->
+     <!-- scrool up -->
+    <a href="#nav" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line"></i>
+     </a>
 
 
     <!-- link swiper -->
